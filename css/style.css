@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+#{
+	box-sizing: border-box;
+}
+
+body{
+	margin:0;
+	height:100vh;
+	font-family:'Lato',sans-serif;
+	font-weight:bold;
+	font-size: 1.5rem;
+	text-transform:uppercase;
+}
+
+#app{
+	height:100%;
+	display:flex;
+	transition: background-color 5s;
+}
+
+.container{
+	margin:auto;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+
+li{
+	margin-bottom:5px;
+	display:flex;
+	align-items:center;
+	position:relative;
+}
+
+li>button{
+	border-radius: 0px 10px 10px 0px;
+}
+
+.button-group{
+	display:flex;
+	justify-content:space-between;
+	width:100%;
+}
+
+.button-group>div>button{
+	padding:15px 20px;
+}
+
+.button-group button{
+	border-radius: 10px;
+}
+
+button{
+	transition:0.25s
+}
+
+input,button{
+	all:unset;
+}
+
+li>button::before{
+	font-family: "FontAwesome";
+	content: "\f09c";
+}
+
+.locked::before{
+	content: "\f023";
+}
+
+input{
+	display:inline;
+	background:#ffffff;
+	padding:15px;
+	max-width:225px;
+/* 	padding-left:0px; */
+	border-radius:10px 0px 0px 10px;
+}
+
+li>button, .button-group button{
+	background:#000000;
+	color:#ffffff;
+	padding:15px;
+	cursor:pointer;
+	min-width:25px;
+	text-align:center;
+}
+
+.button-group button:hover{
+	background:#ffffff;
+	color:#000000;
+}
+
+li>button:hover::before{
+	content: "\f023";
+}
+
+.locked:hover::before{
+	content: "\f09c";
+}
+
+.pin{
+	background:#000000;
+	color:#ffffff;
+/* 	transition:0.25s; */
+	animation-duration: 0.05s;
+/*   	animation-name: fillIn; */
+}
+
+ul li i {
+  	content: "#";
+	padding:15px;
+	padding-right:0px;
+	background:#ffffff;
+	border-radius:10px 0px 0px 10px;
+}
+
+ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+#add::before{
+	font-family: "FontAwesome";
+	content: "\f067";
+}
+
+#remove::before{
+	font-family: "FontAwesome";
+	content: "\f068";
+}
+
+#remove::before{
+	font-family: "FontAwesome";
+	content: "\f068";
+}
+
+.up::before{
+	font-family: "FontAwesome";
+	content: " ";
+}
+
+.down::before{
+	font-family: "FontAwesome";
+	content: " ";
+}
+
+.move button{
+	font-size:1.25rem;
+	cursor:pointer;
+	height:50%;
+	width:100%;
+	text-align:center;
+}
+
+li:hover .up::before{
+	content: "\f062";
+}
+
+li:hover .down::before{
+	content: "\f063";
+}
+
+.move button:hover{
+	color:#ffffff;
+}
+
+.move{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	position:absolute;
+	right:calc(100%);
+	height:100%;
+	width:35px
+}
+
+li.shake{
+	animation-duration: 0.75s;
+  	animation-name: shake;
+}
+
+@keyframes fillIn {
+	0% {
+		background: linear-gradient(to right, #ffffff 100%, #000000 100%);
+  }
+	
+	10% {
+		background: linear-gradient(to right, #ffffff 90%, #000000 90%);
+  }
+	
+	20% {
+		background: linear-gradient(to right, #ffffff 80%, #000000 80%);
+  }
+	
+	30% {
+		background: linear-gradient(to right, #ffffff 70%, #000000 70%);
+  }
+
+	40%{
+		background: linear-gradient(to right, #ffffff 60%, #000000 60%);
+	}
+	
+	50%{
+		background: linear-gradient(to right, #ffffff 50%, #000000 50%);
+	}
+	
+	60% {
+		background: linear-gradient(to right, #ffffff 40%, #000000 40%);
+  }
+	
+	70%{
+		background: linear-gradient(to right, #ffffff 30%, #000000 30%);
+	}
+	
+  	80% {
+    	background: linear-gradient(to right, #ffffff 20%, #000000 20%);
+  }
+	
+	90%{
+		background: linear-gradient(to right, #ffffff 10%, #000000 10%);
+	}
+	
+	100% {
+    	background: linear-gradient(to right, #ffffff 0%, #000000 0%);
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+
+#credit{
+  position:absolute;
+  right:10px;
+  bottom:10px;
+  font-size:0.8rem;
+  text-transform:none;
+}
+
+#credit a{
+  color:#000000;
+}

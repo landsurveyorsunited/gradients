@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>vue.js color gradient generator</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div id="app" :style="{background: gradient}">
+	<div class="container">
+		<ul>
+			<li v-for="(color,index) in colors" :key="color.id" :class="{shake : color.last}">
+								<div class="move">
+					<button class="up" @click="up(index)" v-if="index>0"></button>
+					<button class="down" @click="down(index)" v-if="index<colors.length-1"></button>
+				</div>
+				<input type="text" v-model.trim="color.hex" maxlength="7" :style="{color: color.hex}" :class="{pin : color.disabled}" :disabled="color.disabled">
+				<button @click="lockColor(index)" :class="{locked : color.disabled}"></button>
+
+			</li>
+		</ul>
+		<div class="button-group">
+			<div>
+				<button @click="addColor" id="add"></button>
+				<button @click="removeColor" id="remove" v-if="colors.length > 2"></button>
+			</div>
+			<button @click="generateGradient">random</button>
+		</div>
+	</div>
+</div>
+
+
+<div id="credit">Inspired by <a href="https://codepen.io/kowlor/full/apMbYJ/">Malik Dellidj</a></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
